@@ -5,6 +5,7 @@
 # Verify dependencies
 if [ -z "$(ls -A 'deps/' 2>/dev/null)" ]; then
 	mix deps.get
+    mix compile
 fi
 
 
