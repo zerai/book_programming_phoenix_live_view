@@ -1,4 +1,5 @@
 defmodule App.Account.UserToken do
+  @moduledoc false
   use Ecto.Schema
   import Ecto.Query
   alias App.Account.UserToken
