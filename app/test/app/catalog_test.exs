@@ -30,7 +30,7 @@ defmodule App.CatalogTest do
 
       assert {:ok, %Product{} = product} = Catalog.create_product(valid_attrs)
       assert product.name == "some name"
-      assert product.description == "some  description"
+      assert product." description" == "some  description"
       assert product.unit_price == 120.5
       assert product.sku == 42
     end
@@ -51,7 +51,7 @@ defmodule App.CatalogTest do
 
       assert {:ok, %Product{} = product} = Catalog.update_product(product, update_attrs)
       assert product.name == "some updated name"
-      assert product.description == "some updated  description"
+      assert product." description" == "some updated  description"
       assert product.unit_price == 456.7
       assert product.sku == 43
     end

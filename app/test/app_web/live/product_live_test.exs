@@ -24,7 +24,7 @@ defmodule AppWeb.ProductLiveTest do
   end
 
   describe "Index" do
-    setup [:create_product]
+    setup [:create_product, :register_and_log_in_user]
 
     test "lists all products", %{conn: conn, product: product} do
       {:ok, _index_live, html} = live(conn, ~p"/products")
@@ -88,7 +88,7 @@ defmodule AppWeb.ProductLiveTest do
   end
 
   describe "Show" do
-    setup [:create_product]
+    setup [:create_product, :register_and_log_in_user]
 
     test "displays product", %{conn: conn, product: product} do
       {:ok, _show_live, html} = live(conn, ~p"/products/#{product}")
