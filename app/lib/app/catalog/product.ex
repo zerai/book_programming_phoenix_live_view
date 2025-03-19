@@ -1,4 +1,5 @@
 defmodule App.Catalog.Product do
+  @moduledoc false
   use Ecto.Schema
   import Ecto.Changeset
 
