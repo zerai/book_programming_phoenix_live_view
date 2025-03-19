@@ -16,7 +16,7 @@ defmodule App.CatalogFixtures do
     {:ok, product} =
       attrs
       |> Enum.into(%{
-         description: "some  description",
+        description: "some  description",
         name: "some name",
         sku: unique_product_sku(),
         unit_price: 120.5
