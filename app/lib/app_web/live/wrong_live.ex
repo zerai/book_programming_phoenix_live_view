@@ -1,8 +1,18 @@
 defmodule AppWeb.WrongLive do
   use AppWeb, :live_view
+  # alias App.Account
 
-  def mount(_params, _session, socket) do
-    {:ok, assign(socket, score: 0, message: "Make a guess:")}
+  def mount(_params, session, socket) do
+    # user = Account.get_user_by_session_token(session["user_token"])
+
+    {:ok,
+     assign(
+       socket,
+       score: 0,
+       message: "Guess a number.",
+       session_id: session["live_socket_id"]
+       # current_user: user
+     )}
   end
 
   def render(assigns) do
@@ -18,6 +28,10 @@ defmodule AppWeb.WrongLive do
           {n}
         </.link>
       <% end %>
+      <pre>
+        <%= @current_user.email %>
+        <%= @session_id %>
+      </pre>
     </h2>
     """
   end
